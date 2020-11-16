@@ -1,0 +1,155 @@
+<html lang="en">
+
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1" />
+  <link rel="favicon" type="image/x-icon" href="https://example.com/favicon.png" />
+  <title>DotmanL(Lawal Oladotun)</title>
+  <link rel="stylesheet" type="text/css" href="assets/css/styles.css" />
+</head>
+
+<body>
+  <header>
+    <nav>
+      <div class="git">
+        <img class="git-image" src="assets/images/gitmain.png" alt="logo" />
+      </div>
+      <input type="search" class="search" placeholder="Search or jump to" />
+      <ul class="navbar-nav">
+        <li class="nav-item" aria-current="home">
+          <a class="nav-link">Pull requests</a>
+        </li>
+        <li class="nav-item"><a class="nav-link">Issues</a></li>
+        <li class="nav-item"><a class="nav-link">Marketplace</a></li>
+        <li class="nav-item"><a class="nav-link">Explore</a></li>
+      </ul>
+      <div class="bar-container" onclick="toggler(this)">
+        <div class="bar1"></div>
+        <div class="bar2"></div>
+        <div class="bar3"></div>
+      </div>
+    </nav>
+  </header>
+  <div class="bridge"></div>
+
+  <div class="menu">
+    <input type="search" class="mobile-search" placeholder="Search Github" />
+    <ul class="nav-item-container">
+      <li class="nav-item" aria-current="home">
+        <a class="nav-link">Pull requests</a>
+      </li>
+      <li class="nav-item"><a class="nav-link">Issues</a></li>
+      <li class="nav-item"><a class="nav-link">Marketplace</a></li>
+      <li class="nav-item"><a class="nav-link">Explore</a></li>
+      <li class="nav-item">
+        <img class="git-user-img" alt="DotmanL" />
+        <a class="nav-link git-user"></a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link">
+          <img src="/assets/images/sign-out.svg" class="sign-out" alt="Sign Out" />
+          Sign Out</a>
+      </li>
+    </ul>
+  </div>
+
+  <div class="container">
+    <div class="tab">
+      <div class="repo-tab">
+        <img class="repo-icon" src="/assets/images/repo.svg" alt="repositories" />
+        <a class="repos-link" href="#">Repositories</a>
+        <span class="repositories-total"></span>
+      </div>
+    </div>
+
+    <div class="main-container">
+      <div class="main">
+        <div class="profile-container">
+          <div class="info-div">
+            <img class="profile-image" alt="profile pic" />
+            <div class="profile-names">
+              <h1 class="name"></h1>
+              <h3 class="git-username"></h3>
+            </div>
+          </div>
+
+          <div class="profile-info">
+            <div class="work-status">
+              <img class="home-icon" src="assets/images/home.png" alt="hom" />
+              <h4>Working from home</h4>
+            </div>
+            <button class="edit-profile">Edit Profile</button>
+
+            <div class="profile-contact">
+              <div class="profile-counts">
+                <a href="#" class="link">
+                  <img class="icon" src="/assets/images/people.svg" alt="people" />
+                  <h4 class="followers count"></h4>
+                  <span class="count-label">&nbsp;followers&nbsp;·&nbsp;
+                  </span>
+                </a>
+
+                <a href="#" class="link">
+                  <h4 class="following count"></h4>
+                  <span class="count-label">&nbsp;following&nbsp;·&nbsp;
+                  </span>
+                </a>
+
+                <a href="#" class="link">
+                  <img class="icon" src="/assets/images/star.svg" alt="starred" />
+                  <h4 class="starred count"></h4>
+                </a>
+              </div>
+
+              <div class="location-container">
+                <img class="icon" src="/assets/images/location.svg" alt="location" />
+                <h4 class="location"></h4>
+              </div>
+
+              <div class="email-container">
+                <img class="icon" src="/assets/images/email.svg" alt="email" />
+                <a class="email link"></a>
+              </div>
+
+              <div class="website-container">
+                <img class="icon" src="/assets/images/link.svg" alt="website" />
+                <a class="website link"></a>
+              </div>
+
+              <div class="twitter-container">
+                <img class="icon" src="/assets/images/twitter.svg" alt="twitter" />
+                <a class="twitter link"></a>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="repositories-main">
+          <div class="mobile-access-tab">
+            <div class="mobile-repo-tab">
+              <h4>Repositories</h4>
+              <span class="repositories-total tc"></span>
+            </div>
+          </div>
+          <div class="access-tab">
+            <input type="search" class="repo-search" placeholder="Find a repository..." />
+            <div class="filters">
+              <button class="search-button">Type: All</button>
+              <button class="search-button">Language: All</button>
+              <button class="search-button">
+                <img class="repo-icon" src="/assets/images/repo.svg" alt="repositories" />
+                New
+              </button>
+            </div>
+          </div>
+          <div class="repositories"></div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <script type="text/javascript" src="assets/js/nav.js"></script>
+  <script type="module" src="assets/js/script.js"></script>
+</body>
+
+</html>
