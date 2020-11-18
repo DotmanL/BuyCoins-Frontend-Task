@@ -28,7 +28,33 @@ header {
 nav {
   display: flex;
   flex-direction: row;
-  padding: 10px 20px;
+  align-items: center;
+  justify-content: space-between;
+  padding: 10px 75px 10px 25px;
+  align-items: center;
+}
+
+.nav-right {
+  padding: 15px 10px;
+  width: 110px;
+  cursor: pointer;
+  justify-content: space-between;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+}
+
+.small-img {
+  display: flex;
+  width: 20px;
+  height: 20px;
+  border-radius: 50%;
+  ;
+}
+
+.nav-left {
+  display: flex;
+  flex-direction: row;
   align-items: center;
 }
 
@@ -38,7 +64,7 @@ nav {
   flex-direction: column;
   justify-content: flex-end;
   align-content: center;
-  width: 35px;
+  width: 38px;
   height: 35px;
   border-radius: 50%;
   margin: 0px 15px 0px 0px;
@@ -73,10 +99,11 @@ nav {
 .navbar-nav>.nav-item {
   float: left;
   list-style-type: none;
-  font-size: 16px;
+  font-size: 14px;
   padding: 0 6px;
-  font-weight: 600;
 }
+
+
 
 .navbar-nav>.nav-item:hover {
   opacity: 0.5;
@@ -84,12 +111,12 @@ nav {
 
 .nav-item>.nav-link {
   color: white;
+  font-weight: 700;
   cursor: pointer;
 }
 
 .nav-link {
   text-decoration: none;
-  color: red;
 }
 
 a {
@@ -140,7 +167,7 @@ a {
   display: flex;
   background-color: lightgray;
   border-radius: 50%;
-  padding: 2px 10px;
+  padding: 4px 10px;
   justify-content: center;
   font-size: 12px;
   font-weight: 450;
@@ -153,11 +180,12 @@ a {
   display: flex;
   flex-direction: row;
   justify-content: center;
+  align-items: center;
   width: 160px;
   cursor: pointer;
   padding: 3px 0px 5px 0px;
   border-bottom: 1px solid red;
-  margin: 0px 0px 0px 450px;
+  margin-left: 50vw;
 }
 
 .repos-link {
@@ -182,19 +210,22 @@ a {
 .main {
   display: flex;
   flex-direction: row;
-
+  justify-content: center;
+  width: 100vw;
   border-bottom: 2px solid lightgray;
 }
 
 .profile-container {
   width: auto;
   height: auto;
+  align-items: flex-end;
   display: flex;
+  flex-direction: column;
   color: black;
   font-size: 10px;
-  flex-direction: column;
-  align-items: flex-start;
-  margin: 0px 0px 0px 40px;
+  width: 30vw;
+  margin: 0px 15px;
+
 }
 
 .info-div {
@@ -202,7 +233,7 @@ a {
   display: flex;
   flex-direction: column;
   align-items: center;
-  margin: 0px 0px 0px 20px;
+  justify-self: center;
 }
 
 .profile-image {
@@ -228,47 +259,54 @@ a {
 }
 
 .git-username {
-  font-weight: 300;
+  font-weight: 400;
   font-size: 20px;
   color: gray;
 }
 
 .profile-info {
   display: flex;
-  width: 95%;
+  padding: 2px 30px;
   flex-direction: column;
-  margin: 10px 0px 0px 10px;
+
 }
 
 .work-status {
   display: none;
 }
 
-.edit-profile {
+.profile-contact {
+  display: flex;
+  flex-direction: column;
   width: 100%;
+  align-items: flex-start;
+  height: auto;
+  align-self: flex-end;
+  color: rgb(75, 73, 73);
+  font-size: 15px;
+  padding: 10px;
+  font-weight: normal;
+  margin: 10px 0px 0px 0px;
+}
+
+.edit-profile {
+  width: 90%;
   background-color: #fbfbfb;
   height: 35px;
   outline: none;
+  align-self: center;
   border-radius: 6px;
   font-weight: 600;
   cursor: pointer;
   border: 1px solid lightgrey;
-  margin: 10px 0px 0px 0px;
+  margin: 10px 0px 3px 0px;
 }
 
 .edit-profile:hover {
   opacity: 0.7;
 }
 
-.profile-contact {
-  display: flex;
-  flex-direction: column;
-  height: auto;
-  color: rgb(75, 73, 73);
-  font-size: 15px;
-  font-weight: normal;
-  margin: 10px 0px 0px 0px;
-}
+
 
 .profile-counts {
   display: flex;
@@ -302,7 +340,7 @@ a {
 }
 
 .count-label {
-  font-weight: lighter;
+  font-weight: 400;
   cursor: pointer;
 }
 
@@ -335,6 +373,7 @@ a {
   height: auto;
   display: flex;
   flex-grow: 1;
+
   padding: 5px 20px 50px 0px;
   flex-direction: column;
   align-items: flex-start;
@@ -456,7 +495,8 @@ a {
 }
 
 .repo-description {
-  font-weight: 350;
+  font-weight: 400;
+  font-size: 15px;
 }
 
 .repo-counts {
@@ -541,6 +581,12 @@ a {
 }
 
 @media screen and (min-width: 768px) and (max-width: 1076px) {
+
+  nav {
+
+    padding: 10px 30px 10px 25px;
+  }
+
   .profile-image {
     width: 160px;
     height: 160px;
@@ -551,7 +597,11 @@ a {
   }
 
   .profile-container {
+    display: flex;
+    flex-direction: column;
     margin: 0px;
+    padding: 5px;
+    align-items: center;
   }
 
   .info-div {
@@ -561,11 +611,16 @@ a {
   .profile-info {
     display: flex;
     flex-direction: column;
-    margin: 0px 0px 0px 20px;
+    margin: 0px 0px 0px 30px;
   }
 
   .profile-contact {
+    align-self: flex-end;
     margin: 10px 0px 0px 0px;
+  }
+
+  .profile-counts {
+    margin: 8px 0px 3px 0px;
   }
 
   .repositories {
@@ -588,7 +643,7 @@ a {
   }
 
   .repo-tab {
-    margin: 0px 0px 0px 250px;
+    margin: 0px 0px 0px 50vw;
   }
 
   .mobile-access-tab {
@@ -605,34 +660,77 @@ a {
   .repo-details {
     width: 60%;
   }
+
+  .repo-description {
+    font-weight: 400;
+    font-size: 14px;
+  }
+
 }
 
 @media only screen and (max-width: 767px) {
-  nav {
-    width: 100%;
-    padding: 15px;
-    display: flex;
-    flex-direction: row-reverse;
-    justify-content: flex-end;
-    text-align: center;
-  }
-
   header {
     background: black;
     position: relative;
   }
 
+  nav {
+    width: 100%;
+    padding: 20px 14px;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    text-align: center;
+  }
+
+  .bar-container {
+    display: inline-block;
+    cursor: pointer;
+    order: 1;
+
+  }
+
+  .nav-right {
+    width: auto;
+    height: auto;
+    padding: 3px 5px;
+    order: 3;
+  }
+
+  .nav-left {
+    order: 2;
+  }
+
+  .bell {
+    display: flex;
+  }
+
+  .plus {
+    display: none;
+  }
+
+  .small-img {
+    display: none;
+  }
+
+
   .navbar-nav {
     display: none;
   }
 
+
+
+
   .git {
-    margin-left: 30%;
+    width: 39px;
+    height: 35px;
   }
 
   .tab {
     display: none;
   }
+
 
   .bridge {
     width: 100%;
@@ -728,10 +826,13 @@ a {
 
   .profile-counts {
     order: 5;
+    padding: 20px;
   }
 
+
   .profile-contact {
-    margin: 15px 0px 0px 20px;
+    width: 100vw;
+    margin: -3px 0px 0px 0px;
   }
 
   .info-div {
@@ -803,6 +904,15 @@ a {
 
   .twitter-container {
     display: none;
+  }
+
+  .email-container {
+    margin: 5px 0px 2px 20px
+  }
+
+
+  .website-container {
+    margin: 5px 0px 2px 20px
   }
 
   .repositories {
@@ -902,10 +1012,5 @@ a {
     margin: 0px 5px;
   }
 
-  .bar-container {
-    display: inline-block;
-    cursor: pointer;
-    justify-self: left;
-    align-self: flex-start;
-  }
+
 }

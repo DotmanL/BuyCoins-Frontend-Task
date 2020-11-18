@@ -4,6 +4,7 @@ const gitusername = document.querySelector('.git-username')
 const followersValue = document.querySelector('.followers')
 const gituser = document.querySelector('.git-user')
 const gitUserImage = document.querySelector('.git-user-img')
+const smallGitImage = document.querySelector('.small-img')
 const followingValue = document.querySelector('.following')
 const starredValue = document.querySelector('.starred')
 const locationValue = document.querySelector('.location')
@@ -125,6 +126,7 @@ window.addEventListener('DOMContentLoaded', () => {
 
 			imgValue.src = avatarUrl
 			username.textContent = name
+			smallGitImage.src = avatarUrl
 			gitusername.textContent = login
 			followersValue.textContent = followers.totalCount
 			followingValue.textContent = following.totalCount
@@ -191,7 +193,7 @@ window.addEventListener('DOMContentLoaded', () => {
 	        <div class="repo-star">
 	        <button class="star-toggle-btn">
 	        <div class="stargazer-darkicon"></div>
-	        <h4>Star</h4>
+	        <h4>Unstar</h4>
 	        </button>
 	       </div>
 	         </div>
