@@ -130,7 +130,7 @@ a {
   flex-direction: column;
   justify-content: flex-end;
   background-color: white;
-  margin-top: 60px;
+  margin-top: 50px;
   height: 60px;
   border-bottom: 0.2px solid lightgray;
   width: 100%;
@@ -494,7 +494,7 @@ a {
   width: 25px;
   height: 25px;
   margin: 2px 0px 0px 5px;
-  background-image: url('/assets/images/star.svg');
+  background-image: url('../images/star.svg');
   background-repeat: no-repeat;
   background-position: center;
 }
@@ -535,7 +535,7 @@ a {
   width: 25px;
   height: 25px;
   margin: 0px 5px 0px -5px;
-  background-image: url('/assets/images/starfilled.svg');
+  background-image: url('../images/starfilled.svg');
   background-repeat: no-repeat;
   background-position: center;
 }

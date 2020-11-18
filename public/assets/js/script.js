@@ -1,5 +1,3 @@
-import { gittoken } from '../../config.js'
-
 const imgValue = document.querySelector('.profile-image')
 const username = document.querySelector('.name')
 const gitusername = document.querySelector('.git-username')
@@ -15,11 +13,6 @@ const twitterValue = document.querySelector('.twitter')
 const mobileTcount = document.querySelector('.tc')
 const repositoriesDiv = document.querySelector('.repositories')
 const repositoriesTotalValue = document.querySelector('.repositories-total')
-
-const headers = {
-	'Content-Type': 'application/json',
-	Authorization: 'bearer ' + gittoken.token,
-}
 
 const profileQuery = {
 	query: ` 	query {
@@ -109,15 +102,10 @@ const timeSince = (date) => {
 }
 
 window.addEventListener('DOMContentLoaded', () => {
-	const userProfile = fetch('https://api.github.com/graphql', {
+	const userProfile = fetch('../../../.netlify/functions/token-hider', {
 		method: 'POST',
-		headers: headers,
 		body: JSON.stringify(profileQuery),
-	})
-		.then((profileData) => profileData.json())
-		.catch((error) => {
-			console.error('Error:', error.message)
-		})
+	}).then((profileData) => profileData.json())
 
 	userProfile.then((profileData) => {
 		Object.keys(profileData).forEach((key) => {
@@ -153,9 +141,8 @@ window.addEventListener('DOMContentLoaded', () => {
 		})
 	})
 
-	const userRepository = fetch('https://api.github.com/graphql', {
+	const userRepository = fetch('../../../.netlify/functions/token-hider', {
 		method: 'POST',
-		headers: headers,
 		body: JSON.stringify(repositoryQuery),
 	})
 		.then((repoData) => repoData.json())
@@ -185,31 +172,31 @@ window.addEventListener('DOMContentLoaded', () => {
 
 						const period = timeSince(updatedAt)
 
-						return ` 
-            <div class="repository-container">
-            <div class="repodetails-container" >
-            <div class="repo-details">
-               <a href=${url} class="repo-name"> ${name} </a>
-               <h4 class="repo-description"> ${description}</h4>
-               <div class="repo-counts"> 
-               <div class="language-container">
-                 <div class="language-bar"> </div>   
-                 <h4 class="language">${primaryLanguage.name}</h4> 
-                 <div class="stargazer-icon"> </div>  
-                 <h4 class="stargazer-count">${stargazerCount}</h4> 
-                 <h4 class="updated"> Updated ${period} ago </h4>  
-                 </div>
-            </div>
-          </div> 
-          <div class="repo-star">
-          <button class="star-toggle-btn">
-          <div class="stargazer-darkicon"></div>
-          <h4>Star</h4>
-          </button>
-         </div>
-           </div>
-          </div>
-          `
+						return `
+	          <div class="repository-container">
+	          <div class="repodetails-container" >
+	          <div class="repo-details">
+	             <a href=${url} class="repo-name"> ${name} </a>
+	             <h4 class="repo-description"> ${description}</h4>
+	             <div class="repo-counts">
+	             <div class="language-container">
+	               <div class="language-bar"> </div>
+	               <h4 class="language">${primaryLanguage.name}</h4>
+	               <div class="stargazer-icon"> </div>
+	               <h4 class="stargazer-count">${stargazerCount}</h4>
+	               <h4 class="updated"> Updated ${period} ago </h4>
+	               </div>
+	          </div>
+	        </div>
+	        <div class="repo-star">
+	        <button class="star-toggle-btn">
+	        <div class="stargazer-darkicon"></div>
+	        <h4>Star</h4>
+	        </button>
+	       </div>
+	         </div>
+	        </div>
+	        `
 					})
 					repoValues = repoValues.join('')
 					repositoriesDiv.innerHTML = repoValues

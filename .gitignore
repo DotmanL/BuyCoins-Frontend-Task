@@ -1,3 +1,5 @@
-/config
 
-/config.js
+# Local Netlify folder
+/.netlify
+
+/functions/token-hider/node_modules
