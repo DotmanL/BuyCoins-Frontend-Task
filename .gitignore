@@ -1,5 +1,6 @@
 
 # Local Netlify folder
 /.netlify
+node_modules/
 
-/functions/token-hider/node_modules
+
