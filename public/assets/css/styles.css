@@ -1,10 +1,3 @@
-.number {
-  margin: 10px;
-  width: 90%;
-  display: flex;
-  justify-content: space-between;
-}
-
 * {
   margin: 0;
   padding: 0;
@@ -75,6 +68,8 @@ nav {
   width: 28px;
   height: 30px;
 }
+
+
 
 .search {
   display: flex;
@@ -158,7 +153,7 @@ a {
   justify-content: flex-end;
   background-color: white;
   margin-top: 50px;
-  height: 60px;
+  height: 80px;
   border-bottom: 0.2px solid lightgray;
   width: 100%;
 }
@@ -218,6 +213,7 @@ a {
 .profile-container {
   width: auto;
   height: auto;
+  z-index: 3;
   align-items: flex-end;
   display: flex;
   flex-direction: column;
@@ -241,15 +237,68 @@ a {
   width: 260px;
   height: 260px;
   border-radius: 50%;
-  margin: -30px 0px 0px 30px;
+  margin: -17px 0px 0px 30px;
 }
+
+.status-container {
+  display: flex;
+  flex-direction: row;
+  margin-left: 250px;
+  margin-top: -80px;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.status {
+  background-color: white;
+  border-radius: 4px;
+  display: flex;
+  border-radius: 50%;
+  border: 0.4px solid lightgray;
+  cursor: pointer;
+  width: auto;
+  height: auto;
+  padding: 9px 9px;
+  z-index: 6;
+
+}
+
+.status-icon {
+  width: 25px;
+  height: 25px;
+
+}
+
+.status-info {
+  display: none;
+
+}
+
+
+.status:hover+.status-info {
+  background-color: white;
+  border: 1px solid lightgray;
+  display: flex;
+  color: royalblue;
+  z-index: 3;
+  position: absolute;
+  flex-direction: row;
+  justify-content: center;
+  width: 110px;
+  padding: 8px 8px;
+  margin-left: 38px;
+  border-radius: 6px;
+  animation: ease-in;
+  transition-delay: 2s;
+}
+
 
 .profile-names {
   display: flex;
   flex-direction: column;
   padding: 5px 2px;
   align-items: flex-start;
-  margin: 0px 60px 0px 0px;
+  margin: 20px 60px -10px 0px;
 }
 
 .name {
@@ -373,7 +422,6 @@ a {
   height: auto;
   display: flex;
   flex-grow: 1;
-
   padding: 5px 20px 50px 0px;
   flex-direction: column;
   align-items: flex-start;
@@ -382,6 +430,8 @@ a {
 .repositories-main {
   display: flex;
   flex-direction: column;
+  z-index: 2;
+  position: relative;
 }
 
 .access-tab {
@@ -391,7 +441,7 @@ a {
   justify-self: center;
   padding: 10px 10px 10px 10px;
   width: 95%;
-  margin: 20px 0px 0px 5px;
+  margin: 2px 0px 0px 5px;
 }
 
 .mobile-repo-tab {
@@ -456,7 +506,7 @@ a {
 .repository-container {
   border-top: 1px solid lightgray;
   align-self: center;
-  margin: 10px 80px 0px 0px;
+  margin: 2px 80px 9px 0px;
   padding: 0px;
   height: auto;
   width: 87%;
@@ -465,33 +515,41 @@ a {
 .repodetails-container {
   display: flex;
   height: auto;
-  flex-direction: row;
-  padding: 0px 50px 0px 10px;
-  justify-content: space-between;
+  flex-direction: column;
 }
 
 .repo-star {
   display: flex;
   flex-direction: column;
+  align-self: center;
   justify-self: flex-end;
   justify-content: center;
 }
 
 .repo-details {
   display: flex;
-  flex-direction: column;
-  margin: 20px 0px 5px 0px;
+  flex-direction: row;
+  justify-content: space-between;
+  width: 100%;
+  margin: 10px 0px 5px 0px;
 }
 
 .repo-name {
   font-size: 20px;
-  color: #077de1;
+  color: #0d6cd8;
   font-weight: 500;
-  margin: 0px 0px 5px 0px;
+  margin: -10px 0px 5px 0px;
 }
 
 .repo-name:hover {
   text-decoration: underline;
+}
+
+.repo-main {
+  display: flex;
+  ;
+  flex-direction: column;
+  padding: 15px 0px 10px 10px;
 }
 
 .repo-description {
@@ -503,8 +561,9 @@ a {
   display: flex;
   flex-direction: row;
   align-items: center;
-  margin-top: 20px;
+  margin-top: 10px;
   justify-self: end;
+  padding: 15px 0px 10px 10px;
   height: 30px;
 }
 
@@ -512,8 +571,6 @@ a {
   display: flex;
   flex-direction: row;
   align-items: center;
-  margin-top: 20px;
-  margin-bottom: -10px;
 }
 
 .language-bar {
@@ -551,9 +608,9 @@ a {
 }
 
 .star-toggle-btn {
-  padding: 2px 15px;
+  padding: 2px 8px;
   outline: none;
-  background-color: lightgray;
+  background-color: rgb(230, 230, 230);
   border: 1px solid darkgray;
   display: flex;
   font-weight: 500px;
@@ -574,7 +631,7 @@ a {
 .stargazer-darkicon {
   width: 25px;
   height: 25px;
-  margin: 0px 5px 0px -5px;
+  margin: 0px 0px 0px -5px;
   background-image: url('../images/starfilled.svg');
   background-repeat: no-repeat;
   background-position: center;
@@ -593,7 +650,16 @@ a {
   }
 
   .profile-names {
-    margin: 0px 0px 0px 20px;
+    margin: 30px 0px -10px 20px;
+  }
+
+  .status-container {
+    display: flex;
+    flex-direction: row;
+    margin-left: 200px;
+    margin-top: -80px;
+    justify-content: space-between;
+    align-items: center;
   }
 
   .profile-container {
@@ -624,18 +690,21 @@ a {
   }
 
   .repositories {
+    margin-left: 20px;
     padding: 0px 0px 30px 0px;
   }
 
   .repository-container {
-    width: 90%;
-    margin: 20px 10px 0px 0px;
+    width: 100%;
+    justify-content: space-between;
+    margin: 20px 0px 0px 0px;
   }
 
   .access-tab {
     height: 90px;
     margin: 10px 0px -15px 0px;
   }
+
 
   .repo-search {
     width: 100%;
@@ -657,8 +726,15 @@ a {
     width: 80px;
   }
 
+  .repo-main {
+    width: 70%;
+    padding: 15px 0px 10px 10px;
+  }
+
   .repo-details {
-    width: 60%;
+    width: 90%;
+    display: flex;
+    flex-direction: row;
   }
 
   .repo-description {
@@ -815,6 +891,7 @@ a {
     margin: 0px 0px 0px 0px;
   }
 
+
   .profile-info {
     display: flex;
     flex-direction: column;
@@ -863,6 +940,7 @@ a {
   .profile-names {
     display: flex;
     flex-direction: column;
+    color: black;
     justify-content: center;
     margin: -50px 0px 0px 20px;
   }
@@ -870,26 +948,34 @@ a {
   .name {
     font-size: 29px;
     font-weight: bold;
+
   }
 
   .edit-profile {
-    width: 90%;
-    height: 40px;
-    margin: 10px 0px 0px 0px;
+    width: 97%;
+    height: 30px;
+    margin: 10px 0px 5px 0px;
     align-self: center;
+    justify-self: center;
   }
 
   .work-status {
     display: flex;
     flex-direction: row;
-    align-content: center;
+    align-items: center;
     background-color: white;
     border: 1px solid lightgray;
     width: 90%;
+    border-radius: 6px;
     height: 30px;
     font-size: 13px;
     padding: 5px 15px;
     align-self: center;
+    margin-bottom: -3px;
+  }
+
+  .status-container {
+    display: none;
   }
 
   .home-icon {
@@ -915,20 +1001,7 @@ a {
     margin: 5px 0px 2px 20px
   }
 
-  .repositories {
-    justify-content: center;
-    align-items: center;
-    width: 100vw;
-    height: auto;
-    padding: 10px 0px 0px 0px;
-  }
 
-  .repository-container {
-    border-top: 1px solid lightgray;
-    margin: 0px 0px 0px 0px;
-    width: 95vw;
-    height: auto;
-  }
 
   .access-tab {
     display: flex;
@@ -986,17 +1059,56 @@ a {
     padding: 7px 20px;
   }
 
+
+  .repositories {
+    justify-content: center;
+    align-items: center;
+    width: 100vw;
+    height: auto;
+    padding: 10px 5px 0px 5px;
+  }
+
+  .repository-container {
+    border-top: 1px solid lightgray;
+    margin: 0px 0px 0px 0px;
+    width: auto;
+    height: auto;
+  }
+
+
   .repo-details {
-    width: 75%;
+    width: 100%;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+  }
+
+  .repo-main {
+    width: 70%;
+    padding: 15px 0px 10px 10px;
+  }
+
+  .repo-name {
+    font-size: 16px;
+  }
+
+  .repo-description {
+    font-size: 13px;
   }
 
   .repodetails-container {
-    padding: 0px 10px 0px 5px;
+    padding: 0px 10px 0px 10px;
+    margin: 0px 0px;
+    display: flex;
+    flex-direction: column;
+    width: 100vw;
     justify-content: space-between;
   }
 
   .repo-counts {
-    margin-top: 15px;
+    margin-top: 8px;
+    margin-bottom: 15px;
+    padding: 5px 6px;
   }
 
   .language-container {
@@ -1006,8 +1118,14 @@ a {
     margin: 0px;
   }
 
-  .updated {
+  .star-toggle-btn {
+    padding: 2px 2px;
     font-size: 11px;
+
+  }
+
+  .updated {
+    font-size: 10px;
     font-weight: 400;
     margin: 0px 5px;
   }

@@ -177,9 +177,18 @@ window.addEventListener('DOMContentLoaded', () => {
 						return `
 	          <div class="repository-container">
 	          <div class="repodetails-container" >
-	          <div class="repo-details">
+						<div class="repo-details">
+								<div class="repo-main">
 	             <a href=${url} class="repo-name"> ${name} </a>
-	             <h4 class="repo-description"> ${description}</h4>
+							 <h4 class="repo-description"> ${description}</h4>
+							 </div>
+							 <div class="repo-star">
+							 <button class="star-toggle-btn">
+							 <div class="stargazer-darkicon"></div>
+							 <h4>Unstar</h4>
+							 </button>
+							</div>
+							 </div>
 	             <div class="repo-counts">
 	             <div class="language-container">
 	               <div class="language-bar"> </div>
@@ -189,13 +198,8 @@ window.addEventListener('DOMContentLoaded', () => {
 	               <h4 class="updated"> Updated ${period} ago </h4>
 	               </div>
 	          </div>
-	        </div>
-	        <div class="repo-star">
-	        <button class="star-toggle-btn">
-	        <div class="stargazer-darkicon"></div>
-	        <h4>Unstar</h4>
-	        </button>
-	       </div>
+	       
+	      
 	         </div>
 	        </div>
 	        `
