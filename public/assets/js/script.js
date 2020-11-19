@@ -65,7 +65,6 @@ const timeSince = (date) => {
 	}
 
 	var seconds = Math.floor((new Date() - date) / 1000)
-	var intervalType
 
 	var interval = Math.floor(seconds / 31536000)
 	if (interval >= 1) {
@@ -174,6 +173,8 @@ window.addEventListener('DOMContentLoaded', () => {
 
 						const period = timeSince(updatedAt)
 
+						const language = primaryLanguage.name
+
 						return `
 	          <div class="repository-container">
 	          <div class="repodetails-container" >
@@ -191,7 +192,13 @@ window.addEventListener('DOMContentLoaded', () => {
 							 </div>
 	             <div class="repo-counts">
 	             <div class="language-container">
-	               <div class="language-bar"> </div>
+								 <div class=
+								 ${
+										(language === 'JavaScript' && 'language-icon') ||
+										(language === 'CSS' && 'language-icon-css') ||
+										(language === 'HTML' && 'language-icon-html')
+									}
+								 ></div>
 	               <h4 class="language">${primaryLanguage.name}</h4>
 	               <div class="stargazer-icon"> </div>
 	               <h4 class="stargazer-count">${stargazerCount}</h4>
@@ -201,10 +208,14 @@ window.addEventListener('DOMContentLoaded', () => {
 	       
 	      
 	         </div>
-	        </div>
-	        `
+					</div>
+					
+				
+					`
 					})
+
 					repoValues = repoValues.join('')
+
 					repositoriesDiv.innerHTML = repoValues
 				})
 			})

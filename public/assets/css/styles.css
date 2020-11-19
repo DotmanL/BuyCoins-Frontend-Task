@@ -125,7 +125,7 @@ a {
 .bar1,
 .bar2,
 .bar3 {
-  width: 35px;
+  width: 30px;
   height: 3px;
   background-color: lightgray;
   margin: 6px 0;
@@ -339,7 +339,7 @@ a {
 }
 
 .edit-profile {
-  width: 90%;
+  width: 95%;
   background-color: #fbfbfb;
   height: 35px;
   outline: none;
@@ -563,7 +563,7 @@ a {
   align-items: center;
   margin-top: 10px;
   justify-self: end;
-  padding: 15px 0px 10px 10px;
+  padding: 15px 0px 10px 8px;
   height: 30px;
 }
 
@@ -573,7 +573,7 @@ a {
   align-items: center;
 }
 
-.language-bar {
+.language-icon {
   display: flex;
   border-radius: 50%;
   background-color: #eedd59;
@@ -581,11 +581,28 @@ a {
   height: 15px;
 }
 
+.language-icon-css {
+  display: flex;
+  border-radius: 50%;
+  background-color: purple;
+  width: 15px;
+  height: 15px;
+}
+
+.language-icon-html {
+  display: flex;
+  border-radius: 50%;
+  background-color: red;
+  width: 15px;
+  height: 15px;
+}
+
 .language {
   font-size: 13px;
-  font-weight: 350;
+  font-weight: 450;
   margin: 0px 0px 0px 8px;
 }
+
 
 .stargazer-icon {
   width: 25px;
@@ -883,6 +900,10 @@ a {
     outline: none;
   }
 
+  .mobile-search:focus {
+    border: 3px solid #1d76da;
+  }
+
   .profile-container {
     display: flex;
     flex-direction: column;
@@ -1012,7 +1033,6 @@ a {
   .mobile-access-tab {
     display: flex;
     flex-direction: row;
-    font-size: 17px;
     background-color: white;
     justify-content: center;
     align-items: center;
@@ -1027,8 +1047,13 @@ a {
     margin-top: 20px;
   }
 
+  .repo-tag {
+    font-weight: 550;
+    font-size: 17px;
+  }
+
   .tc {
-    margin-top: 5x;
+    margin-top: 2px;
   }
 
   .tabactive {
@@ -1108,7 +1133,7 @@ a {
   .repo-counts {
     margin-top: 8px;
     margin-bottom: 15px;
-    padding: 5px 6px;
+    padding: 5px 8px;
   }
 
   .language-container {
@@ -1125,7 +1150,7 @@ a {
   }
 
   .updated {
-    font-size: 10px;
+    font-size: 13px;
     font-weight: 400;
     margin: 0px 5px;
   }

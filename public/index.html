@@ -12,23 +12,23 @@
   <header>
     <nav>
       <div class="nav-left">
-      <div class="git">
-        <img class="git-image" src="assets/images/gitmain.png" alt="logo" />
+        <div class="git">
+          <img class="git-image" src="assets/images/gitmain.png" alt="logo" />
+        </div>
+        <input type="search" class="search" placeholder="Search or jump to" />
+        <ul class="navbar-nav">
+          <li class="nav-item" aria-current="home">
+            <a class="nav-link">Pull requests</a>
+          </li>
+          <li class="nav-item"><a class="nav-link">Issues</a></li>
+          <li class="nav-item"><a class="nav-link">Marketplace</a></li>
+          <li class="nav-item"><a class="nav-link">Explore</a></li>
+        </ul>
       </div>
-      <input type="search" class="search" placeholder="Search or jump to" />
-      <ul class="navbar-nav">
-        <li class="nav-item" aria-current="home">
-          <a class="nav-link">Pull requests</a>
-        </li>
-        <li class="nav-item"><a class="nav-link">Issues</a></li>
-        <li class="nav-item"><a class="nav-link">Marketplace</a></li>
-        <li class="nav-item"><a class="nav-link">Explore</a></li>
-      </ul>
-    </div>
       <div class="nav-right">
-        <img class= "bell" src='./assets/images/bell.svg' alt ="notifications" />
-        <img class="plus" src='./assets/images/plus.svg' alt ="add-new" />
-        <img class ="small-img" alt ="profile picture"/>
+        <img class="bell" src='./assets/images/bell.svg' alt="notifications" />
+        <img class="plus" src='./assets/images/plus.svg' alt="add-new" />
+        <img class="small-img" alt="profile picture" />
       </div>
       <div class="bar-container" onclick="toggler(this)">
         <div class="bar1"></div>
@@ -75,11 +75,13 @@
           <div class="info-div">
             <img class="profile-image" alt="profile pic" />
             <div class="status-container">
-            <div class="status" >
-              <img class="status-icon" src="assets/images/home.png" alt="status" />
+              <div class="status">
+                <img class="status-icon" src="assets/images/home.png" alt="status" />
+              </div>
+              <div class="status-info">
+                <h4>Working from home</h4>
+              </div>
             </div>
-            <div class="status-info"><h4>Working from home</h4></div>
-          </div>
             <div class="profile-names">
               <h1 class="name"></h1>
               <h3 class="git-username"></h3>
@@ -91,7 +93,7 @@
               <img class="home-icon" src="assets/images/home.png" alt="hom" />
               <h4>Working from home</h4>
             </div>
-   
+
 
             <div class="profile-contact">
               <button class="edit-profile">Edit Profile</button>
@@ -141,7 +143,7 @@
         <div class="repositories-main">
           <div class="mobile-access-tab">
             <div class="mobile-repo-tab">
-              <h4>Repositories</h4>
+              <h4 class="repo-tag">Repositories</h4>
               <span class="repositories-total tc"></span>
             </div>
           </div>
