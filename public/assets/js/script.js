@@ -186,7 +186,7 @@ window.addEventListener('DOMContentLoaded', () => {
 							 <div class="repo-star">
 							 <button class="star-toggle-btn">
 							 <div class="stargazer-darkicon"></div>
-							 <h4>Unstar</h4>
+							 <h4>${stargazerCount === 0 ? "Star" : "Unstar"}</h4>
 							 </button>
 							</div>
 							 </div>
