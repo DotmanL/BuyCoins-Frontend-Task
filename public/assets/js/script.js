@@ -14,6 +14,8 @@ const twitterValue = document.querySelector('.twitter')
 const mobileTcount = document.querySelector('.tc')
 const repositoriesDiv = document.querySelector('.repositories')
 const repositoriesTotalValue = document.querySelector('.repositories-total')
+const tabProfileImage = document.querySelector('.tab-profile-image')
+const tabUsername = document.querySelector('.tab-username')
 
 const profileQuery = {
 	query: ` 	query {
@@ -68,37 +70,41 @@ const timeSince = (date) => {
 
 	var interval = Math.floor(seconds / 31536000)
 	if (interval >= 1) {
-		intervalType = 'year'
+		var options = { month: 'short', day: 'numeric', year: 'numeric' }
+		const fineDate = new Intl.DateTimeFormat('dd-mm', options).format(date)
+		intervalType = 'on' + ' ' + fineDate
 	} else {
 		interval = Math.floor(seconds / 2592000)
 		if (interval >= 1) {
-			intervalType = 'month'
+			var options = { month: 'short', day: 'numeric' }
+			const fineDate = new Intl.DateTimeFormat('dd-mm', options).format(date)
+			intervalType = 'on' + ' ' + fineDate
 		} else {
 			interval = Math.floor(seconds / 86400)
 			if (interval >= 1) {
-				intervalType = 'day'
+				intervalType = interval + ' ' + 'days ago'
 			} else {
 				interval = Math.floor(seconds / 3600)
 				if (interval >= 1) {
-					intervalType = 'hour'
+					intervalType = interval + ' ' + 'hours ago'
 				} else {
 					interval = Math.floor(seconds / 60)
 					if (interval >= 1) {
-						intervalType = 'minute'
+						intervalType = interval + ' ' + 'minutes ago'
 					} else {
 						interval = seconds
-						intervalType = 'second'
+						intervalType = interval + ' ' + 'seconds ago'
 					}
 				}
 			}
 		}
 	}
 
-	if (interval > 1 || interval === 0) {
+	if (interval === 0) {
 		intervalType += 's'
 	}
 
-	return interval + ' ' + intervalType
+	return intervalType
 }
 
 window.addEventListener('DOMContentLoaded', () => {
@@ -139,6 +145,8 @@ window.addEventListener('DOMContentLoaded', () => {
 			websiteValue.href = `https://${websiteUrl}`
 			twitterValue.textContent = twitterUsername
 			twitterValue.href = `https://twitter.com/${twitterUsername}`
+			tabProfileImage.src = avatarUrl
+			tabUsername.textContent = login
 		})
 	})
 
@@ -185,8 +193,8 @@ window.addEventListener('DOMContentLoaded', () => {
 							 </div>
 							 <div class="repo-star">
 							 <button class="star-toggle-btn">
-							 <div class="stargazer-darkicon"></div>
-							 <h4>Unstar</h4>
+							 <div class=${stargazerCount === 0 ? 'stargazer-whiteicon' : 'stargazer-darkicon'}></div>
+							 <h4 class="stargazer-label">${stargazerCount === 0 ? 'Star' : 'Unstar'}</h4>
 							 </button>
 							</div>
 							 </div>
@@ -202,7 +210,7 @@ window.addEventListener('DOMContentLoaded', () => {
 	               <h4 class="language">${primaryLanguage.name}</h4>
 	               <div class="stargazer-icon"> </div>
 	               <h4 class="stargazer-count">${stargazerCount}</h4>
-	               <h4 class="updated"> Updated ${period} ago </h4>
+	               <h4 class="updated"> Updated ${period}</h4>
 	               </div>
 	          </div>
 	       

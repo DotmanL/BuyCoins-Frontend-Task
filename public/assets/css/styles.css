@@ -11,8 +11,7 @@ body {
 }
 
 header {
-  background: black;
-  position: fixed;
+  background-color: #24292e;
   top: 0;
   width: 100%;
   z-index: 1000;
@@ -37,12 +36,42 @@ nav {
   align-items: center;
 }
 
+.nav-right-items-container {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  margin: 0px 5px;
+}
+
+.nav-right-items-container:hover {
+  opacity: 0.7;
+}
+
+.dropdown-arrow {
+  display: inline-block;
+  margin: 0px 3px;
+  width: 0;
+  height: 0;
+  vertical-align: middle;
+  color: #dddddd;
+  content: "";
+  border-top-style: solid;
+  border-top-width: 4px;
+  border-right: 4px solid transparent;
+  border-bottom: 0 solid transparent;
+  border-left: 4px solid transparent;
+}
+
+.plus {
+  margin: 0px 6px;
+}
+
 .small-img {
   display: flex;
   width: 20px;
   height: 20px;
   border-radius: 50%;
-  ;
+  margin: 0px 6px;
 }
 
 .nav-left {
@@ -77,6 +106,7 @@ nav {
   background-color: black;
   border: 0.1px solid lightgray;
   opacity: 0.7;
+  width: 250px;
   color: lightgray;
   border-radius: 2px;
   outline: none;
@@ -149,14 +179,79 @@ a {
 
 .tab {
   display: flex;
-  flex-direction: column;
-  justify-content: flex-end;
+  flex-direction: row;
   background-color: white;
-  margin-top: 50px;
-  height: 80px;
+  margin-top: 0px;
+  height: 60px;
+  padding: 0px 0px 0px 16vw;
   border-bottom: 0.2px solid lightgray;
   width: 100%;
 }
+
+.deskTabactive {
+  display: flex;
+  flex-direction: row;
+  justify-content: flex-start;
+  position: fixed;
+  padding: 0px 0px 0px 0px;
+  background-color: white;
+  z-index: 19;
+  height: 50px;
+  top: 0;
+  border-bottom: 0.2px solid lightgray;
+  width: 100%;
+}
+
+.tab-container {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  width: 60%;
+  height: auto;
+}
+
+
+
+.tab-image {
+  display: none;
+}
+
+.tab-image-active {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  width: auto;
+  height: auto;
+  margin-left: 10vw;
+  padding: 2px 7px;
+}
+
+.tab-profile-image {
+  display: flex;
+  border-radius: 50%;
+  width: 35px;
+  height: 35px;
+}
+
+.tab-username {
+  font-weight: 600;
+  margin: 0px 7px;
+}
+
+.repo-tab {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  align-self: flex-end;
+  width: 160px;
+  cursor: pointer;
+  justify-self: flex-end;
+  padding: 3px 0px 5px 0px;
+  margin-left: 25vw;
+  border-bottom: 1px solid red;
+}
+
 
 .repositories-total {
   display: flex;
@@ -171,17 +266,7 @@ a {
   height: 22px;
 }
 
-.repo-tab {
-  display: flex;
-  flex-direction: row;
-  justify-content: center;
-  align-items: center;
-  width: 160px;
-  cursor: pointer;
-  padding: 3px 0px 5px 0px;
-  border-bottom: 1px solid red;
-  margin-left: 50vw;
-}
+
 
 .repos-link {
   font-size: 15px;
@@ -288,6 +373,7 @@ a {
   padding: 8px 8px;
   margin-left: 38px;
   border-radius: 6px;
+  font-size: 10px;
   animation: ease-in;
   transition-delay: 2s;
 }
@@ -463,11 +549,28 @@ a {
   color: black;
 }
 
+
+.dropdown-arrow-dark {
+  display: inline-block;
+  margin: 0px 3px;
+  width: 0;
+  height: 0;
+  vertical-align: middle;
+  color: black;
+  content: "";
+  border-top-style: solid;
+  border-top-width: 4px;
+  border-right: 4px solid transparent;
+  border-bottom: 0 solid transparent;
+  border-left: 4px solid transparent;
+}
+
 .search-button {
   display: flex;
   flex-direction: row;
   font-weight: 500;
   justify-content: center;
+  align-items: center;
   align-items: center;
   font-size: 15px;
   padding: 4px 10px;
@@ -627,18 +730,21 @@ a {
 .star-toggle-btn {
   padding: 2px 8px;
   outline: none;
-  background-color: rgb(230, 230, 230);
+  background-color: #ffffff;
   border: 1px solid darkgray;
   display: flex;
-  font-weight: 500px;
   width: auto;
-  font-size: 14px;
   height: auto;
   border-radius: 5px;
   flex-direction: row;
-  justify-content: start;
+  justify-content: center;
   align-items: center;
   cursor: pointer;
+}
+
+.stargazer-label {
+  font-size: 14px;
+  font-weight: 500;
 }
 
 .star-toggle-btn:hover {
@@ -648,8 +754,17 @@ a {
 .stargazer-darkicon {
   width: 25px;
   height: 25px;
-  margin: 0px 0px 0px -5px;
+  margin: 0px 0px 0px -3px;
   background-image: url('../images/starfilled.svg');
+  background-repeat: no-repeat;
+  background-position: center;
+}
+
+.stargazer-whiteicon {
+  width: 25px;
+  height: 25px;
+  margin: 0px 0px 0px -3px;
+  background-image: url('../images/star.svg');
   background-repeat: no-repeat;
   background-position: center;
 }
@@ -668,6 +783,10 @@ a {
 
   .profile-names {
     margin: 30px 0px -10px 20px;
+  }
+
+  .search {
+    width: 150px;
   }
 
   .status-container {
@@ -728,9 +847,6 @@ a {
     margin: 20px 5px 20px 25px;
   }
 
-  .repo-tab {
-    margin: 0px 0px 0px 50vw;
-  }
 
   .mobile-access-tab {
     display: none;
@@ -757,13 +873,14 @@ a {
   .repo-description {
     font-weight: 400;
     font-size: 14px;
+    color: black;
   }
 
 }
 
 @media only screen and (max-width: 767px) {
   header {
-    background: black;
+    background-color: #24292e;
     position: relative;
   }
 
@@ -818,6 +935,10 @@ a {
   .git {
     width: 39px;
     height: 35px;
+  }
+
+  .dropdown-arrow {
+    display: none;
   }
 
   .tab {
@@ -876,7 +997,7 @@ a {
     margin-top: 0px;
     z-index: 1;
     width: 100vw;
-    background-color: black;
+    background-color: #24292e;
     transform-origin: 0% 0%;
     transform: unset;
     padding: 10px 10px 2px 20px;
@@ -893,15 +1014,15 @@ a {
     flex-direction: column;
     width: 90vw;
     padding: 7px 2px 7px 20px;
-    background-color: black;
+    background-color: #24292e;
     border: 0.3px solid lightgray;
     color: lightgray;
-    border-radius: 2px;
+    border-radius: 6px;
     outline: none;
   }
 
   .mobile-search:focus {
-    border: 3px solid #1d76da;
+    border: 2px solid #1d76da;
   }
 
   .profile-container {
@@ -1026,19 +1147,11 @@ a {
 
   .access-tab {
     display: flex;
+    width: 100vw;
     flex-direction: column;
     margin: 0px;
   }
 
-  .mobile-access-tab {
-    display: flex;
-    flex-direction: row;
-    background-color: white;
-    justify-content: center;
-    align-items: center;
-    color: black;
-    height: 40px;
-  }
 
   .mobile-repo-tab {
     display: flex;
@@ -1054,6 +1167,21 @@ a {
 
   .tc {
     margin-top: 2px;
+  }
+
+
+  .deskTabactive {
+    display: none;
+  }
+
+  .mobile-access-tab {
+    display: flex;
+    flex-direction: row;
+    background-color: white;
+    justify-content: center;
+    align-items: center;
+    color: black;
+    height: 40px;
   }
 
   .tabactive {
@@ -1078,7 +1206,7 @@ a {
 
   .search-button {
     width: auto;
-    font-size: 14px;
+    font-size: 12.2px;
     font-weight: 400;
     margin: 2px 5px;
     padding: 7px 20px;
@@ -1144,9 +1272,8 @@ a {
   }
 
   .star-toggle-btn {
-    padding: 2px 2px;
+    padding: 2px 4px;
     font-size: 11px;
-
   }
 
   .updated {

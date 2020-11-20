@@ -17,7 +17,7 @@
         </div>
         <input type="search" class="search" placeholder="Search or jump to" />
         <ul class="navbar-nav">
-          <li class="nav-item" aria-current="home">
+          <li class="nav-item" >
             <a class="nav-link">Pull requests</a>
           </li>
           <li class="nav-item"><a class="nav-link">Issues</a></li>
@@ -27,8 +27,14 @@
       </div>
       <div class="nav-right">
         <img class="bell" src='./assets/images/bell.svg' alt="notifications" />
+        <div class='nav-right-items-container'>
         <img class="plus" src='./assets/images/plus.svg' alt="add-new" />
+        <div class="dropdown-arrow"> </div> 
+      </div>
+      <div class="nav-right-items-container">
         <img class="small-img" alt="profile picture" />
+        <div class="dropdown-arrow"> </div>
+      </div>
       </div>
       <div class="bar-container" onclick="toggler(this)">
         <div class="bar1"></div>
@@ -62,11 +68,17 @@
 
   <div class="container">
     <div class="tab">
+      <div class="tab-container">
+      <div class="tab-image"> 
+        <img class="tab-profile-image" alt='profile image' />
+        <h4 class="tab-username" ></h4>
+      </div>
       <div class="repo-tab">
         <img class="repo-icon" src="assets/images/repo.svg" alt="repositories" />
         <a class="repos-link" href="#">Repositories</a>
         <span class="repositories-total"></span>
       </div>
+    </div>
     </div>
 
     <div class="main-container">
@@ -150,8 +162,10 @@
           <div class="access-tab">
             <input type="search" class="repo-search" placeholder="Find a repository..." />
             <div class="filters">
-              <button class="search-button">Type: All</button>
-              <button class="search-button">Language: All</button>
+              <button class="search-button">Type: All 
+                <span class="dropdown-arrow-dark"> </span></button>
+              <button class="search-button">Language: All <span class="dropdown-arrow-dark"> </span>
+              </button>
               <button class="search-button">
                 <img class="repo-icon" src="assets/images/repo.svg" alt="repositories" />
                 New
