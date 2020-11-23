@@ -882,6 +882,9 @@ a {
   header {
     background-color: #24292e;
     position: relative;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
   }
 
   nav {
@@ -904,7 +907,7 @@ a {
   .nav-right {
     width: auto;
     height: auto;
-    padding: 3px 5px;
+    margin: 0px 0px;
     order: 3;
   }
 
@@ -933,8 +936,9 @@ a {
 
 
   .git {
-    width: 39px;
+    width: 36px;
     height: 35px;
+    margin: 0px 0px 0px 0px;
   }
 
   .dropdown-arrow {
@@ -1157,7 +1161,7 @@ a {
     display: flex;
     border-bottom: 1px solid red;
     padding: 0px 5px 10px 20px;
-    margin-top: 20px;
+    margin-top: 10px;
   }
 
   .repo-tag {
@@ -1188,7 +1192,7 @@ a {
     background-color: white;
     position: fixed;
     top: 0;
-    height: 60px;
+    height: 50px;
     display: flex;
     flex-direction: row;
     width: 100vw;

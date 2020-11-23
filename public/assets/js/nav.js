@@ -7,10 +7,8 @@ const toggler = () => {
 	menunav.classList.toggle('active')
 }
 
-var mobileTabOffset = mobileTab.offsetTop
-
 window.addEventListener('scroll', () => {
-	if (window.pageYOffset >= mobileTabOffset) {
+	if (window.scrollY >= 400) {
 		mobileTab.classList.add('tabactive')
 	} else {
 		mobileTab.classList.remove('tabactive')
