@@ -49,7 +49,7 @@ repositoryOwner(login: "DotmanL") {
       description
       url
       stargazerCount
-      updatedAt
+      pushedAt
       primaryLanguage {
         name
       }
@@ -177,9 +177,9 @@ window.addEventListener('DOMContentLoaded', () => {
 					let repos = repositories[key]
 
 					let repoValues = repos.nodes.map((repo) => {
-						const { name, description, url, primaryLanguage, stargazerCount, updatedAt } = repo
+						const { name, description, url, primaryLanguage, stargazerCount, pushedAt } = repo
 
-						const period = timeSince(updatedAt)
+						const period = timeSince(pushedAt)
 
 						const language = primaryLanguage.name
 
@@ -204,7 +204,8 @@ window.addEventListener('DOMContentLoaded', () => {
 								 ${
 										(language === 'JavaScript' && 'language-icon') ||
 										(language === 'CSS' && 'language-icon-css') ||
-										(language === 'HTML' && 'language-icon-html')
+										(language === 'HTML' && 'language-icon-html') ||
+										(language === 'TypeScript' && 'language-icon-typescript')
 									}
 								 ></div>
 	               <h4 class="language">${primaryLanguage.name}</h4>

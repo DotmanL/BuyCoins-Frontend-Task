@@ -700,6 +700,14 @@ a {
   height: 15px;
 }
 
+.language-icon-typescript {
+  display: flex;
+  border-radius: 50%;
+  background-color: royalblue;
+  width: 15px;
+  height: 15px;
+}
+
 .language {
   font-size: 13px;
   font-weight: 450;
