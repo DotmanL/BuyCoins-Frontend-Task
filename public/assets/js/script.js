@@ -181,7 +181,7 @@ window.addEventListener('DOMContentLoaded', () => {
 
 						const period = timeSince(pushedAt)
 
-						const language = primaryLanguage.name
+						const language = primaryLanguage?.name || 'Javascript'
 
 						return `
 	          <div class="repository-container">
