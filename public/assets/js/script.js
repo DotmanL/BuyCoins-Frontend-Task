@@ -208,7 +208,7 @@ window.addEventListener('DOMContentLoaded', () => {
 										(language === 'TypeScript' && 'language-icon-typescript')
 									}
 								 ></div>
-	               <h4 class="language">${primaryLanguage.name}</h4>
+	               <h4 class="language">${language}</h4>
 	               <div class="stargazer-icon"> </div>
 	               <h4 class="stargazer-count">${stargazerCount}</h4>
 	               <h4 class="updated"> Updated ${period}</h4>
